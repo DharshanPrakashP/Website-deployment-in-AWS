@@ -26,7 +26,7 @@ modules/
 
 Before you begin, ensure you have the following tools installed on your local machine:
 
-- 🧰 [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.0.0
+- 🧰 [Terraform](https://developer.hashicorp.com/terraform/downloads) 
 - ☁️ [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (configured with your credentials)
 - 🧑‍💻 [Git](https://git-scm.com/)
 - 🔐 An active AWS account
