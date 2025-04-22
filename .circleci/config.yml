@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  terraform_init:
+  Setup_aws:
     docker:
       - image: hashicorp/terraform:light
     steps:
@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Terraform Init and Plan
           command: |
-            cd env/dev
+            cd $env/dev
             terraform init
             terraform plan
 
@@ -46,12 +46,14 @@ jobs:
       - run:
           name: Terraform Init
           command: |
+            cd env/dev
             terraform init
 
       # Apply Terraform changes
       - run:
           name: Terraform Apply
           command: |
+            cd env/dev
             terraform apply -auto-approve
 
   terraform_destroy:
@@ -64,22 +66,24 @@ jobs:
       - run:
           name: Terraform Init
           command: |
+            cd env/dev
             terraform init
 
       # Destroy Terraform resources
       - run:
           name: Terraform Destroy
           command: |
+            cd env/dev
             terraform destroy -auto-approve
 
 workflows:
   version: 2
   terraform_flow:
     jobs:
-      - terraform_init
+      - Setup_aws
       - terraform_plan:
           requires:
-            - terraform_init
+            - Setup_aws
       - hold1:
           type: approval
           requires:
