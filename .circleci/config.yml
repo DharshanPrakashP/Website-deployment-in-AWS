@@ -30,6 +30,7 @@ jobs:
       - run:
           name: Terraform Init and Plan
           command: |
+            cd env/dev
             terraform init
             terraform plan
 
