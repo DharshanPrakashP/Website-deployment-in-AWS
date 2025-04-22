@@ -90,11 +90,12 @@ workflows:
             - terraform_plan
       - terraform_apply:
           requires:
-            - hold1
+            - hold
       - hold:
           type: approval
           requires:
             - terraform_plan
       - terraform_destroy:
           requires:
-            - hold
+            - hold1
+            
