@@ -1,7 +1,10 @@
 # 🚀  Website-deployment-in-AWS
-<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="icon" width="81" height="81" /><img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="icon" width="81" height="81" /><img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="icon" width="81" height="81" /></div>
-
 This project demonstrates how to deploy a static website (such as a React app) on an AWS EC2 instance using Terraform for infrastructure provisioning. It includes modular Terraform code and follows best practices for IaC (Infrastructure as Code), state management, and secure networking.
+<div style="display: flex; align-items: center; justify-content: center;">
+  <img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="Docker" width="81" height="81" />
+  <img src="https://techstack-generator.vercel.app/kubernetes-icon.svg" alt="Kubernetes" width="81" height="81" />
+  <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="81" height="81" />
+</div>
 
 # 📂 File Structure
 ```plaintext
