@@ -6,14 +6,11 @@ jobs:
       - image: hashicorp/terraform:light
     steps:
       - checkout
-
-      # Install AWS CLI
       - run:
           name: Install AWS CLI
           command: |
             apk update
             apk add --no-cache aws-cli
-      # Configure AWS CLI with access key and secret key
       - run:
           name: Configure AWS CLI
           command: |
@@ -25,8 +22,6 @@ jobs:
       - image: hashicorp/terraform:light
     steps:
       - checkout
-
-      # Initialize Terraform
       - run:
           name: Terraform Init and Plan
           command: |
@@ -34,47 +29,40 @@ jobs:
             terraform init
             terraform plan
 
-
-
   terraform_apply:
     docker:
       - image: hashicorp/terraform:light
     steps:
       - checkout
-
-      # Initialize Terraform
       - run:
           name: Terraform Init
           command: |
             cd env/dev
             terraform init
-
-      # Apply Terraform changes
       - run:
           name: Terraform Apply
           command: |
             cd env/dev
             terraform apply -auto-approve
+            terraform output -raw Public_IP > public_ip.txt
+            cat public_ip.txt
 
   terraform_destroy:
     docker:
       - image: hashicorp/terraform:light
     steps:
       - checkout
-
-      # Initialize Terraform
       - run:
           name: Terraform Init
           command: |
             cd env/dev
             terraform init
-
-      # Destroy Terraform resources
       - run:
           name: Terraform Destroy
           command: |
             cd env/dev
             terraform destroy -auto-approve
+  
 
 workflows:
   version: 2
