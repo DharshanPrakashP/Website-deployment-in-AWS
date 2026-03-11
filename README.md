@@ -6,6 +6,8 @@ This project demonstrates how to deploy a static website (such as a React app) o
   <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="81" height="81" />
 </div>
 
+
+
 # 📂 File Structure
 ```plaintext
 env/
